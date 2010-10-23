@@ -1,7 +1,7 @@
 <% posts.each do |post|  %>
-	<div id="comment" class="span-17">
-		<div id=comment_title" class="span-17">
-			<div class="span-10">
+	<div  class="span-17">
+		<div id="comment"  class="span-17">
+			<div id="comment_title" class="span-10">
 				<h3><b><%= post.title -%></b>
 					<span id="author_info" class="alt">
 						Submitted by <%= post.user.preferred_name %>
@@ -9,7 +9,6 @@
 					</span>
 				</h3>
 			</div>
-		</div>
 		<div id="comment_body" class="span-17">
 			"<%=post.post_body %>"
 		</div>
@@ -21,6 +20,7 @@
 					<% end %>
 				</ul>
 			</div>
+		</div>
 		</div>
 	</div>
 <% end %>
