@@ -17,7 +17,10 @@
 			</div>
 			<hr>
 			<div class="span-17 prepend-1 colborder">
+				<p>
 				<%= yield %>
+				and things
+				</p>
 			</div>
 			<div id="login" class="span-5 last">
 				<% if current_user %>
@@ -31,10 +34,12 @@
 						<span class="alt">In order to post, you will need to sign in.</span>
 					</div>
 				<div id="network_buttons" class="span-5">
-					<div class="span-2">
+					<br />
+					<div class="span-4">
 						<%= twitter_button %>
 					</div>
-					<div class="span-2">
+					<br />
+					<div class="span-4">
 						<%= facebook_button %>
 					</div>
 				</div>
