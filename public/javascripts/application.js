@@ -25,7 +25,7 @@ if ($('#nickname').length){
         $('#nickname').html(document.createTextNode($('#nickname_input').val()));
         $('#nickname_input').hide();
         $('#nickname').fadeIn();
-        if(previous != $('#nickname').html()){
+        if(previous != document.createTextNode($('#nickname').html())){
           $.ajax({
               url: '/main/update_nickname?nickname='+ $('#nickname').html(), type: 'get', dataType: 'html',
               success: updateNicknameCallbackSuccess,
