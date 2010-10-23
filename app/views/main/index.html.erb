@@ -1,4 +1,4 @@
 
 <h2>Recently Submitted Posts</h2>
 
-<%= render :partial => 'post', :collection => @posts %>
+<%= render :partial => 'post', :locals => { :posts => @posts } %>
