@@ -2,8 +2,9 @@ function updateNicknameCallbackSuccess(){
   $.notifyBar({cls: 'success', html: "Nickname Changed!" });
 }
 
-function updateNicknameCallbackSuccess(){
+function updateNicknameCallbackFail(){
   $.notifyBar({cls: 'error', html: "Failed To Change Nickname: Try Another Name" });
+  $('#nickname').html(previous);
 }
 $(document).ready(function() {
 $.ajaxSettings.accepts.html = $.ajaxSettings.accepts.script;
@@ -28,7 +29,7 @@ if ($('#nickname').length){
           $.ajax({
               url: '/main/update_nickname?nickname='+ $('#nickname').html(), type: 'get', dataType: 'html',
               success: updateNicknameCallbackSuccess,
-              error: updateNicknameCallbackSuccess
+              error: updateNicknameCallbackFail
               
           });
           
