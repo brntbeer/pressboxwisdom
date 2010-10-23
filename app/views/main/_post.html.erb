@@ -7,10 +7,10 @@
 		<div class="span-7">
 			<div class="taglist">
 				<ul>
-					<% post.tags[1..5].each do |tag| %>
-						<li class="tag">tag.tag</li>
-			  	<% end %>
-			 </ul>
+					<% post.tags[0..5].each do |t| %>
+						<li class="tag"><%= t.tag %> </li>
+					<% end %>
+				</ul>
 			</div>
 		</div>
 		<br />

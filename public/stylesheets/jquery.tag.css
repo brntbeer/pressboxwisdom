@@ -1,10 +1,5 @@
 .taglist {
     background: url("images/textbox-bg.png") repeat-x scroll center top white;
-    border-color: #727272 #B4B4B4 #DADADA;
-    border-left: 1px solid #B4B4B4;
-    border-right: 1px solid #B4B4B4;
-    border-style: solid;
-    border-width: 1px;
     padding: 3px;
     overflow: hidden;
     font-family: sans-serif;
