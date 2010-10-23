@@ -6,8 +6,8 @@ class CreateTags < ActiveRecord::Migration
     end
 
     create_table :tags_posts, :id => false do |t|
-      t.integer :tag_id, :null => false
-      t.integer :post_id, :null => false
+      t.references :tag, :null => false
+      t.references :post, :null => false
     end
   end
 
