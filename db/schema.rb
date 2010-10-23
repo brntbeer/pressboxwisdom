@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101023053032) do
+ActiveRecord::Schema.define(:version => 20101023194412) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(:version => 20101023053032) do
     t.datetime "updated_at"
   end
 
+  add_index "posts", ["id"], :name => "index_posts_on_id"
+
   create_table "posts_tags", :id => false, :force => true do |t|
     t.integer "tag_id",  :null => false
     t.integer "post_id", :null => false
@@ -54,11 +56,16 @@ ActiveRecord::Schema.define(:version => 20101023053032) do
     t.datetime "updated_at"
   end
 
+  add_index "tags", ["id"], :name => "index_tags_on_id"
+  add_index "tags", ["tag"], :name => "index_tags_on_tag"
+
   create_table "users", :force => true do |t|
     t.string   "remember_token"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "nickname"
   end
+
+  add_index "users", ["id"], :name => "index_users_on_id"
 
 end

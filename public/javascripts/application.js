@@ -21,11 +21,11 @@ if ($('#nickname').length){
         $('#nickname_input').fadeIn().select().focus();
     });
     $('#nickname_input').blur(function(){
-        previous = $('#nickname').html();
-        $('#nickname').html($('#nickname_input').val());
+        previous = document.createTextNode($('#nickname').html());
+        $('#nickname').html(document.createTextNode($('#nickname_input').val()));
         $('#nickname_input').hide();
         $('#nickname').fadeIn();
-        if(previous != $('#nickname').html()){
+        if(previous != document.createTextNode($('#nickname').html())){
           $.ajax({
               url: '/main/update_nickname?nickname='+ $('#nickname').html(), type: 'get', dataType: 'html',
               success: updateNicknameCallbackSuccess,

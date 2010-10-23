@@ -16,7 +16,7 @@
 			<div class="taglist">
 				<ul>
 					<% post.tags[0..5].each do |t| %>
-						<li class="tag"><%= t.tag %> </li>
+            <li class="tag"><a href="/tagid/<%=t.id%>"> <%= t.tag %></a> </li>
 					<% end %>
 				</ul>
 			</div>
