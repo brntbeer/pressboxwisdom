@@ -4,6 +4,16 @@
 			Submitted by <%= post.user.preferred_name %>
 			on <%= post.created_at.strftime("%m/%d/%Y") %>
 		</div>
+		<div class="span-7">
+			<div class="taglist">
+				<ul>
+					<% post.tags[1..5].each do |tag| %>
+						<li class="tag">tag.tag</li>
+						<li class="tag">tag.tag</li>
+					</ul>
+				<% end %>
+			</div>
+		</div>
 		<br />
 		<br />
 	</div>
