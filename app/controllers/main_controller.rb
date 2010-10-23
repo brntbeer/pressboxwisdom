@@ -5,8 +5,11 @@ class MainController < ApplicationController
 
   def update_nickname
     current_user.nickname = params[:nickname]
-    current_user.save
-    flash[:success] = "Nickname Changed!"
+    if current_user.save
+      render :text => '', :status => 200
+    else
+      render :text => '', :status => 403
+    end
   end
 
 end
