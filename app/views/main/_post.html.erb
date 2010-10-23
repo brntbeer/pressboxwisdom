@@ -1,8 +1,13 @@
 <% posts.each do |post|  %>
-	<div class="span-17">
-		<div class="span-10">
-			Submitted by <%= post.user.preferred_name %>
-			on <%= post.created_at.strftime("%m/%d/%Y") %>
+	<div id="comment" class="span-17">
+		<div class="span-17">
+			<div class="span-10">
+				Submitted by <%= post.user.preferred_name %>
+				on <%= post.created_at.strftime("%m/%d/%Y") %>
+			</div>
+		</div>
+		<div id="comment_body" class="span-17">
+			"<%=post.post_body %>"
 		</div>
 		<div class="span-7">
 			<div class="taglist">
@@ -13,11 +18,5 @@
 				</ul>
 			</div>
 		</div>
-		<br />
-		<br />
 	</div>
-	<div class="span-17">
-		<%=post.post_body %>
-	</div>
-	<hr>
 <% end %>
