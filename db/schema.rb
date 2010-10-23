@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(:version => 20101023053032) do
     t.string   "remember_token"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "nickname",       :null => false
+    t.string   "nickname"
   end
 
 end
