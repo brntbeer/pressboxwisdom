@@ -10,11 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101023001534) do
+ActiveRecord::Schema.define(:version => 20101023022639) do
 
   create_table "login_accounts", :force => true do |t|
     t.string   "type"
-    t.string   "user_id"
+    t.integer  "user_id"
     t.string   "remote_account_id"
     t.string   "name"
     t.string   "login"
