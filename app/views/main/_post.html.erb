@@ -1,12 +1,14 @@
 <% posts.each do |post|  %>
 	<div class="span-17">
-		<div class="span-2">
-			Author: <%= post.user.preferred_name %>
+		<div class="span-10">
+			Submitted by <%= post.user.preferred_name %>
+			on <%= post.created_at.strftime("%m/%d/%Y") %>
 		</div>
 		<br />
-		<div class="span-8">
-			<%=post.post_body %>
-		</div>
-		<hr>
+		<br />
 	</div>
+	<div class="span-17">
+		<%=post.post_body %>
+	</div>
+	<hr>
 <% end %>
