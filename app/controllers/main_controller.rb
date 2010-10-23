@@ -3,13 +3,42 @@ class MainController < ApplicationController
     @posts = Post.find(:all,:order => "created_at DESC", :limit => 10)
   end
 
-  def tags
-    @tag = params[:tag] || ""
-    tag = Tag.where(:tag => @tag ).first
-    if tag
-      @posts = tag.posts
+  def userposts
+    @userid = params[:user] || -1
+    user = User.where(:id => @userid).first
+    if user
+      @posts = user.posts
+      @username = user.preferred_name
     else
       @posts = []
+      flash[:error] = "Invalid Userid"
+    end
+  end
+
+  def tags
+    tag = params[:tag] || ""
+    @tag = Tag.where(:tag => tag).first
+    if(@tag)
+      @posts = @tag.posts
+      @tag = @tag.tag
+    else
+      flash[:error] = "Tag Does Not Exist"
+      @posts = []
+      @tag = tag
+    end
+    render :tagid
+  end
+
+  def tagid
+    tagid = params[:tagid] || -1 
+    tag = Tag.where(:id => tagid ).first
+    if tag
+      @posts = tag.posts
+      @tag = tag.tag
+    else
+      flash[:error] = "Tag Does Not Exist"
+      @posts = []
+      @tag = ""
     end
   end
 
