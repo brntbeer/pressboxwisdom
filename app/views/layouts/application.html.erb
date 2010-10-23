@@ -12,8 +12,25 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1>Pressbox<span class="alt">Wisdom</span></h1>
-			<%= yield %>
+			<div class="span-24">
+				<h1>Pressbox<span class="alt">Wisdom</span></h1>
+			</div>
+			<hr>
+			<div class="span-17 prepend-1 colborder">
+				<%= yield %>
+			</div>
+			<div class="span-5 last">
+				<h3>Login</h3>
+			</div>
+			<hr>
+			<div id="footer">
+				<div class="span-1 colborder">
+					About
+				</div>
+				<div class="span-1 colborder">
+					Faq
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
