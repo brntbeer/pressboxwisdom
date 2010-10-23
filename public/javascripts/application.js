@@ -1,4 +1,7 @@
 $(document).ready(function() {
+$.ajaxSettings.accepts.html = $.ajaxSettings.accepts.script;
+
+
   if($('#flash').length){
         $.notifyBar({ cls: $('#flash').attr('class'), html: $('#flash').html() });
   }
@@ -14,8 +17,11 @@ if ($('#nickname').length){
         $('#nickname').html($('#nickname_input').val());
         $('#nickname_input').hide();
         $('#nickname').fadeIn();
-        if(previous == $('#nickname').html()){
-          //ajax callback
+        if(previous != $('#nickname').html()){
+          $.ajax({
+              url: '/main/update_nickname?nickname='+ $('#nickname').html(), type: 'get', dataType: 'html'
+          });
+          
         }
     });
     $('#nickname_input').keypress(function(event){
@@ -27,3 +33,5 @@ if ($('#nickname').length){
   }
 
 });
+
+
