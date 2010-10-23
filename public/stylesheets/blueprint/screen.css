@@ -267,3 +267,5 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 
 /* Custom */
 div#welcome {float:right;}
+div#comment_body {font-size: 1.5em; padding-top: 10px;}
+div#comment{margin-top: 5px;border: 1px solid #ccc;}
