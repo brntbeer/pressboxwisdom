@@ -1,8 +1,9 @@
 class CreatePosts < ActiveRecord::Migration
   def self.up
     create_table :posts do |t|
-      t.integer 
-
+      t.references :user
+      t.string :video_link, :null => true
+      t.text :post_body
       t.timestamps
     end
   end
