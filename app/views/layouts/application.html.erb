@@ -42,6 +42,7 @@
           <div id="network_buttons" class="span-5">
             You've posted <%= current_user.posts.count %> tidbits of wisdom.
 					<br />
+            <%= link_to "Sign Out", "/logout" %>
 				</div>
 				<%else %>
 					<div class="span-1">
