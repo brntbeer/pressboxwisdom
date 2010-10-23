@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20101023053032) do
 
   create_table "login_accounts", :force => true do |t|
     t.string   "type"
-    t.string   "user_id"
+    t.integer  "user_id"
     t.string   "remote_account_id"
     t.string   "name"
     t.string   "login"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(:version => 20101023053032) do
     t.string   "remember_token"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "nickname",       :null => false
+    t.string   "nickname"
   end
 
 end
