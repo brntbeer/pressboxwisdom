@@ -5,7 +5,11 @@ gem 'rails', '3.0.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'mysql2'
+gem 'omnisocial'
+gem 'recaptcha', :require => 'recaptcha/rails', :git => 'git://github.com/rfc2822/recaptcha.git', :branch => 'rails3'
+gem 'jquery-rails'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
