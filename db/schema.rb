@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101023053032) do
+ActiveRecord::Schema.define(:version => 20101023041005) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20101023053032) do
 
   create_table "login_accounts", :force => true do |t|
     t.string   "type"
-    t.integer  "user_id"
+    t.string   "user_id"
     t.string   "remote_account_id"
     t.string   "name"
     t.string   "login"
@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(:version => 20101023053032) do
     t.string   "remember_token"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "nickname",       :null => false
   end
 
 end
