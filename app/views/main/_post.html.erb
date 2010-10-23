@@ -1,5 +1,11 @@
 <%@posts.each do |post|  %>
 	<div class="span-10">
-		<%=post.user.preferred_name%>
+		<div class="span-2">
+			<%= post.user.preferred_name %>
+		</div>
+		<br />
+		<div class="span-8">
+			<%=post.post_body %>
+		</div>
 	</div>
 <% end %>
