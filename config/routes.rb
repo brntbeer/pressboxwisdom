@@ -3,6 +3,8 @@ Pressboxwisdom::Application.routes.draw do
 
   root :to => "main#index"  
 
+  match "main/update_nickname" => "main#update_nickname"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
