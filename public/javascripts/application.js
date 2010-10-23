@@ -22,6 +22,7 @@ if ($('#nickname').length){
       if (event.keyCode == 13) {
        event.preventDefault();
        $('#nickname_input').blur();
+      }
     });
   }
 
