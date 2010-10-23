@@ -17,6 +17,9 @@
 		<div class="container">
 			<div class="span-24">
 				<h1>Pressbox<span class="alt">Wisdom</span></h1>
+				<% flash.each do |key, msg| %>
+					<%= content_tag (:div, msg, :class => key) %>
+				<% end %>
 			</div>
 			<hr>
 			<div class="span-17 prepend-1 colborder">
