@@ -5,7 +5,7 @@ class CreateTags < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :tags_posts, :id => false do |t|
+    create_table :posts_tags, :id => false do |t|
       t.references :tag, :null => false
       t.references :post, :null => false
     end
@@ -13,6 +13,6 @@ class CreateTags < ActiveRecord::Migration
 
   def self.down
     drop_table :tags
-    drop_table :tags_posts
+    drop_table :posts_tags
   end
 end
