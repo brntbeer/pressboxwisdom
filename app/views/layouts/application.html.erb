@@ -19,15 +19,34 @@
 			<div class="span-17 prepend-1 colborder">
 				<%= yield %>
 			</div>
-			<div class="span-5 last">
-				<h4>Login</h4>
-			</div>
+			<div id="login" class="span-5 last">
+				<% if current_user %>
+				<%else %>
+					<div class="span-1">
+						<%= image_tag "user.png" =%>	
+					</div>
+					<div class="span-3">
+						Welcome, <b>Guest!</b>
+						<br />
+						<span class="alt">In order to post, you will need to sign in.</span>
+					</div>
+				<div id="network_buttons" class="span-5">
+					<div class="span-2">
+						<%= twitter_button %>
+					</div>
+					<div class="span-2">
+						<%= facebook_button %>
+					</div>
+				</div>
+
+			<% end %>
+		</div>
 			<hr>
 			<div style="float:right;"id="footer">
 				<div class="span-1 colborder">
 					About
 				</div>
-				<div class="span-1 colborder">
+				<div class="span-1">
 					Faq
 				</div>
 			</div>
