@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(:version => 20101023022639) do
 
   create_table "login_accounts", :force => true do |t|
     t.string   "type"
-    t.integer  "user_id"
+    t.string   "user_id"
     t.string   "remote_account_id"
     t.string   "name"
     t.string   "login"
