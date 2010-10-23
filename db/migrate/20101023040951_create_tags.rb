@@ -11,7 +11,6 @@ class CreateTags < ActiveRecord::Migration
     end
   end
 
-
   def self.down
     drop_table :tags
     drop_table :tags_posts
