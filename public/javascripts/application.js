@@ -4,6 +4,7 @@ function updateNicknameCallbackSuccess(){
 
 function updateNicknameCallbackFail(){
   $.notifyBar({cls: 'error', html: "Failed To Change Nickname: Try Another Name" });
+  $('#nickname').html(previous);
 }
 $(document).ready(function() {
 $.ajaxSettings.accepts.html = $.ajaxSettings.accepts.script;
