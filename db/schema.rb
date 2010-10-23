@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20101023053032) do
 
   create_table "posts", :force => true do |t|
     t.integer  "user_id"
+    t.string   "title"
     t.string   "video_link"
     t.text     "post_body"
     t.datetime "created_at"
