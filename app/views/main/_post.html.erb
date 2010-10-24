@@ -3,6 +3,7 @@
 		<div id=comment_title" class="span-17">
 			<div class="span-10">
 				<h3><b><%= post.title -%></b>
+          <br/>
 					<span id="author_info" class="alt">
             Submitted by <a href="/user/<%=post.user_id%>"> <%= post.user.preferred_name %></a>
 						on <%= post.created_at.strftime("%m/%d/%Y") %>
