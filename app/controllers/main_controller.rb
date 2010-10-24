@@ -42,6 +42,25 @@ class MainController < ApplicationController
     end
   end
 
+  def new_post
+    if current_user
+      p = Post.create
+      p.post_body = params[:body]
+      p.title = params[:title]
+      params[:tags].split(",").each do |tag|
+        p.tags << Tag.find_or_create_by_tag(tag)
+      end
+      p.user = current_user
+      p.save
+      flash[:success] = "Post added!"
+      index
+      render :action => :index
+    else
+      flash[:error] = "Forbidden, you must be logged in to post"
+      render :index
+    end
+  end
+
   def update_nickname
     current_user.nickname = params[:nickname] unless params[:nickname] == "" 
     if current_user.save && params[:nickname] != ""

@@ -1,3 +1,7 @@
 <h3>Recently Submitted Posts</h3>
 <%= render :partial => 'post', :locals => { :posts => @posts } %>
+<br/><br/>
+<% if current_user %>
+  <%= render :partial => 'newpost' %>
+<% end %>
 

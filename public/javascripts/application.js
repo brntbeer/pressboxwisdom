@@ -7,6 +7,9 @@ function updateNicknameCallbackFail(){
   $('#nickname').html(previous);
 }
 $(document).ready(function() {
+
+$('#tags').tag({seperator: ','});
+  
 $.ajaxSettings.accepts.html = $.ajaxSettings.accepts.script;
 
 
