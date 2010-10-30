@@ -81,7 +81,7 @@ class MainController < ApplicationController
 			c.save
 			flash[:success] = "Comment added!"
 			post
-			render :action => :post
+			redirect_to "/post/#{c.post_id}" 
 		else
 			flash[:error] = "Forbidden, you must be logged in to comment"
 			render :post
