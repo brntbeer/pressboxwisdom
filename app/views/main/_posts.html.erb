@@ -2,7 +2,7 @@
 	<div  class="span-17">
 		<div id="post"  class="span-17">
 			<div id="post_title" class="span-10">
-				<h3><b><%= post.title -%></b>
+				<h3><b><a href="/post/<%=post.id%>"><%= post.title -%></b></a>
           <br/>
 					<span id="author_info" class="alt">
             Submitted by <a href="/user/<%=post.user_id%>"> <%= post.user.preferred_name %></a>

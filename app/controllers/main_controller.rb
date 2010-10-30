@@ -65,7 +65,7 @@ class MainController < ApplicationController
       p.save
       flash[:success] = "Post added!"
       index
-      render :action => :index
+      redirect_to :root
     else
       flash[:error] = "Forbidden, you must be logged in to post"
       redirect_to :index
