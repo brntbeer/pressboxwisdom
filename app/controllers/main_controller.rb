@@ -47,6 +47,7 @@ class MainController < ApplicationController
   end
 
 	def post
+    @histogram = Tag.to_histogram
 		id = params[:post]
 		post = Post.find(id)
 		@post = post
