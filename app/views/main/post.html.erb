@@ -1,6 +1,5 @@
 <h3>Post: <%= @post.title %></h3>
 <div  class="span-17">
-	<div id="post"  class="span-17">
 		<div id="post_title" class="span-10">
 			<h3><b><%= @post.title -%></b>
 				<br/>
@@ -10,8 +9,10 @@
 				</span>
 			</h3>
 		</div>
-		<div id="post_body" class="span-17">
-			"<%=@post.post_body %>"
+		<div id="post_body" class="span-15">
+			<p>
+			"<%=@post.post_body -%>"
+			</p>
 		</div>
 		<div class="span-7">
 			<div class="taglist">
@@ -21,11 +22,11 @@
 					<% end %>
 				</ul>
 			</div>
-		</div>
 	</div>
-
-	<%= render :partial => 'comments', :locals => { :comments => @post.comments } %>
-	<br/>
+	<div class="span-15 prepend-1">
+		<%= render :partial => 'comments', :locals => { :comments => @post.comments } %>
+		<br />
+	</div>
 	<% if current_user %>
 		<%= render :partial => 'newcomment', :locals => { :post_id => @post.id} %> 
 	<% end %>

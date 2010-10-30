@@ -1,5 +1,5 @@
 <% posts.each do |post|  %>
-	<div  class="span-17">
+	<div  class="span-16">
 		<div id="post"  class="span-17">
 			<div id="post_title" class="span-10">
 				<h3><b><a href="/post/<%=post.id%>"><%= post.title -%></b></a>
@@ -10,8 +10,10 @@
 					</span>
 				</h3>
 			</div>
-		<div id="post_body" class="span-17">
+		<div id="post_body" class="span-15">
+			<p>
 			"<%=post.post_body %>"
+			</p>
 		</div>
 		<div class="span-7">
 			<div class="taglist">

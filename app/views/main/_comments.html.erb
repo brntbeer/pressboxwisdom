@@ -1,19 +1,12 @@
 <% comments.each do |comment|  %>
-	<div  class="span-17">
-		<div id="comment"  class="span-17">
-			<div id="comment_title" class="span-10">
-				<br/>
-				<span id="author_info" class="alt">
-					Submitted by <a href="/user/<%=comment.user_id%>"> <%= comment.user.preferred_name %></a>
-					on <%= comment.created_at.strftime("%m/%d/%Y") %>
-				</span>
-			</h3>
-		</div>
-		<div id="comment_body" class="span-17">
-			<%=comment.body %>
-		</div>
+	<span id="author_info" class="alt">
+		Submitted by <a href="/user/<%=comment.user_id%>"> <%= comment.user.preferred_name %></a>
+		on <%= comment.created_at.strftime("%m/%d/%Y") %>
+	</span>
+	<div class="span-15">
+		<p>
+		<%= comment.body %>
+		</p>
 	</div>
 	<hr />
-	<br />
-</div>
 <% end %>
