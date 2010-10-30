@@ -15,13 +15,18 @@
 			"<%=post.post_body %>"
 			</p>
 		</div>
-		<div class="span-7">
-			<div class="taglist">
+		<div class="span-17">
+			<div class="taglist span-10">
 				<ul>
 					<% post.tags[0..5].each do |t| %>
             <li class="tag"><a href="/tagid/<%=t.id%>"> <%= t.tag %></a> </li>
 					<% end %>
 				</ul>
+			</div>
+			<div id="comment-count" class="span-2 alt">
+				<span>
+				  <%= post.comments.length %> Comments
+				</span>
 			</div>
 		</div>
 		</div>

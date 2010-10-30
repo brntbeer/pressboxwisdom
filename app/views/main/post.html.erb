@@ -14,7 +14,7 @@
 			"<%=@post.post_body -%>"
 			</p>
 		</div>
-		<div class="span-7">
+		<div class="span-10">
 			<div class="taglist">
 				<ul>
 					<% @post.tags[0..5].each do |t| %>
@@ -22,6 +22,7 @@
 					<% end %>
 				</ul>
 			</div>
+	<br />
 	</div>
 	<div class="span-15 prepend-1">
 		<%= render :partial => 'comments', :locals => { :comments => @post.comments } %>
