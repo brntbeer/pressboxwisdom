@@ -5,7 +5,7 @@ Pressboxwisdom::Application.configure do
   # Code is not reloaded between requests
   config.cache_classes = true
 
-  #config.cache_store = :mem_cache_store, Memcached::Rails.new
+  config.cache_store = :mem_cache_store, Memcached::Rails.new
   
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
