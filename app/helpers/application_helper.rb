@@ -15,7 +15,7 @@ module ApplicationHelper
       _size = (((histogram[k] / histogram.map{|key,val| histogram[key]}.sum.to_f) * 100) + 5).to_i
       _heat = sprintf("%02x" % (255 - (_size * 25)))
       html << %{
-        <div class="heatmap_element" style="color: ##{_heat}#{_heat}#{_heat}; font-size: #{_size}px; height: #{_max}px;"><a href=\"/tag/#{k}\">#{k}</a></div>
+        <div class="heatmap_element" style="color: ##{_heat}#{_heat}#{_heat};text-decoration:none; font-size: #{_size}px; height: #{_max}px;"><a href=\"/tag/#{k}\">#{k}</a></div>
       }
     end
     html << %{<br style="clear: both;" /></div>}    

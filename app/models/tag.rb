@@ -6,6 +6,10 @@ class Tag < ActiveRecord::Base
   end
 
   def self.to_histogram
-    Tag.all.inject({}){|hash,tag| hash[tag.tag] = tag.frequency; hash}
+    unless cloud = Rails.cache.read(:tag_cloud)
+      cloud = Tag.all.inject({}){|hash,tag| hash[tag.tag] = tag.frequency; hash}
+      Rails.cache.write(:tag_cloud, cloud , :expires_in => 5.minutes)
+    end
+    cloud
   end
 end
