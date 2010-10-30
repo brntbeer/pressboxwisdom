@@ -55,7 +55,7 @@ class MainController < ApplicationController
 
   def new_post
     if current_user
-      p = Post.create
+      p = Post.new
       p.post_body = params[:body]
       p.title = params[:title]
       params[:tags].split(",").each do |tag|
@@ -74,7 +74,7 @@ class MainController < ApplicationController
 	
 	def new_comment
 		if current_user
-			c = Comment.create
+			c = Comment.new
 			c.body = params[:body]
 			c.user = current_user
 			c.post_id = params[:post]
