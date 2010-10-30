@@ -1,10 +1,12 @@
 class MainController < ApplicationController
   def index
     @posts = Post.find(:all,:order => "created_at DESC", :limit => 10)
+    @histogram = Tag.to_histogram
   end
 
   def userposts
     @userid = params[:user] || -1
+    @histogram = Tag.to_histogram
     user = User.where(:id => @userid).first
     if user
       @posts = user.posts
@@ -18,6 +20,7 @@ class MainController < ApplicationController
   def tags
     tag = params[:tag] || ""
     @tag = Tag.where(:tag => tag).first
+    @histogram = Tag.to_histogram
     if(@tag)
       @posts = @tag.posts
       @tag = @tag.tag
@@ -32,6 +35,7 @@ class MainController < ApplicationController
   def tagid
     tagid = params[:tagid] || -1 
     tag = Tag.where(:id => tagid ).first
+    @histogram = Tag.to_histogram
     if tag
       @posts = tag.posts
       @tag = tag.tag
@@ -57,7 +61,7 @@ class MainController < ApplicationController
       render :action => :index
     else
       flash[:error] = "Forbidden, you must be logged in to post"
-      render :index
+      redirect_to :index
     end
   end
 

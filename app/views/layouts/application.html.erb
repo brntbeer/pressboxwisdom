@@ -63,8 +63,10 @@
 						<%= facebook_button %>
 					</div>
 				</div>
-
 			<% end %>
+      <div id="tagcloud" class="span-5">
+        <%=raw heatmap(@histogram) -%>
+      </div>
 		</div>
 			<hr>
 			<div style="float:right;"id="footer">
