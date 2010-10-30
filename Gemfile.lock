@@ -52,6 +52,7 @@ GEM
       activesupport (>= 2.3.6)
       mime-types
       treetop (>= 1.4.5)
+    memcache-client (1.8.5)
     memcached-northscale (0.19.5.4)
     mime-types (1.16)
     multi_json (0.0.4)
@@ -103,6 +104,7 @@ PLATFORMS
 
 DEPENDENCIES
   jquery-rails
+  memcache-client
   memcached-northscale
   mysql2
   omnisocial
