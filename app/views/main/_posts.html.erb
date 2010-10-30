@@ -25,7 +25,7 @@
 			</div>
 			<div id="comment-count" class="span-2 alt">
 				<span>
-				  <%= post.comments.length %> Comments
+				<%=pluralize( post.comments.length, 'Comment')%>
 				</span>
 			</div>
 		</div>
