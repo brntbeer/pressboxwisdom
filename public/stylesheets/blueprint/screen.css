@@ -267,7 +267,7 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 
 /* Custom */
 div#welcome {float:right;}
-div#comment_body {padding-left:10px; font-size: 14px;}
-div#comment{margin-bottom: 5px;  border: 1px solid #ccc;}
-div#comment_title{padding-left:10px;}
+div#post_body {padding-left:10px; font-size: 14px;}
+div#post{margin-bottom: 5px;  border: 1px solid #ccc;}
+div#post_title{padding-left:10px;}
 span#author_info{font-size:12px;}

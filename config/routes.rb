@@ -9,5 +9,6 @@ Pressboxwisdom::Application.routes.draw do
   match "user/:user" => "main#userposts"
   match "main/update_nickname" => "main#update_nickname"
   match "main/new_post" => "main#new_post"
+	match "main/new_comment" => "main#new_comment", :as => "post"
 
 end

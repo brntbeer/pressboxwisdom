@@ -42,6 +42,12 @@ class MainController < ApplicationController
     end
   end
 
+	def post
+		id = params[:post]
+		post = Post.find(id)
+		@post = post
+	end
+
   def new_post
     if current_user
       p = Post.create
@@ -60,6 +66,22 @@ class MainController < ApplicationController
       render :index
     end
   end
+	
+	def new_comment
+		if current_user
+			c = Comment.create
+			c.body = params[:body]
+			c.user = current_user
+			c.post_id = params[:post]
+			c.save
+			flash[:success] = "Comment added!"
+			post
+			render :action => :post
+		else
+			flash[:error] = "Forbidden, you must be logged in to comment"
+			render :post
+		end
+	end
 
   def update_nickname
     current_user.nickname = params[:nickname] unless params[:nickname] == "" 
