@@ -1,3 +1,18 @@
+.heatmap {
+  border-top: 1px solid #aaaaaa;
+  border-bottom: 1px solid #aaaaaa;
+  width: 300px;
+  padding: 1em;
+}
+
+.heatmap_element {
+  display: block;
+  text-align: center;
+  margin: .25em;
+  padding-top: 0em;
+  float: left;
+}
+
 #omnisocial-login {
   overflow: hidden;
 }

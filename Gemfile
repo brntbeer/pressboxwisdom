@@ -9,6 +9,9 @@ gem 'mysql2'
 gem 'omnisocial'
 gem 'recaptcha', :require => 'recaptcha/rails', :git => 'git://github.com/rfc2822/recaptcha.git', :branch => 'rails3'
 gem 'jquery-rails'
+gem "memcached-northscale", :require => "memcached"
+gem "memcache-client"
+
 
 
 # Use unicorn as the web server
